@@ -1,0 +1,6 @@
+{
+  "name": "AJ Enterprise",
+  "description": "Used & Refurbished Laptops in Ahmedabad",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
