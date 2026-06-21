@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle2, ShieldCheck, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 const IMAGES = [
   "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=1200",
@@ -110,18 +110,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating Review Card */}
-            <div className="absolute bottom-4 right-4 sm:-bottom-6 sm:-right-8 bg-white px-3 sm:px-5 py-2 sm:py-3.5 rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-gray-50 flex flex-col sm:flex-row items-center gap-1 sm:gap-3 z-30">
-              <div className="flex gap-1 text-yellow-400">
-                <Star fill="currentColor" size={14} className="sm:w-4 sm:h-4" />
-                <Star fill="currentColor" size={14} className="sm:w-4 sm:h-4" />
-                <Star fill="currentColor" size={14} className="sm:w-4 sm:h-4" />
-                <Star fill="currentColor" size={14} className="sm:w-4 sm:h-4" />
-                <Star fill="currentColor" size={14} className="sm:w-4 sm:h-4" />
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#0f172a] flex items-center gap-1">5.0 <span className="text-gray-500 font-medium text-[10px] sm:text-xs">Reviews</span></div>
-            </div>
-            
             {/* Soft background glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-md bg-orange-200/40 blur-[100px] rounded-full -z-10"></div>
           </div>

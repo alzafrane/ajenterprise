@@ -38,14 +38,6 @@ const products: Product[] = [
   },
   {
     id: 3,
-    name: 'Refurbished MacBook Pro M2 Pro',
-    desc: 'Ultimate power and productivity powerhouse with Apple M2 Pro silicon, stunning Liquid Retina XDR display, and supreme battery life.',
-    specs: ['Apple M2 Pro chip', '16GB Ram', '512GB SSD Drive', '12-core CPU | 30-core GPU'],
-    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=max&q=80&w=800',
-    popular: false
-  },
-  {
-    id: 4,
     name: 'Refurbished Dell Latitude 3400',
     desc: 'Reliable and durable companion perfect for office productivity, studying, and everyday utility tasks.',
     specs: ['Intel Core i5', '8th Gen..', '8 Gb Ram', '256 Gb SSD'],
@@ -53,164 +45,124 @@ const products: Product[] = [
     popular: false
   },
   {
+    id: 7,
+    name: 'Refurbished Dell Latitude 5490',
+    desc: 'Business-class durability with robust performance. Ideal for everyday office work and heavy multitasking.',
+    specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
+    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800',
+    popular: true
+  },
+  {
     id: 5,
-    name: 'Refurbished Dell Latitude 7440',
-    desc: 'Ultra-portable elite business laptop with premium aluminum design, robust built-in security, and speedy operations.',
-    specs: ['Intel Core i5', '4th GEN', '8 Gb RAM', '256 Gb SSD'],
+    name: 'Refurbished Dell Latitude 5480',
+    desc: 'Reliable and durable business companion perfect for productivity and everyday utility tasks.',
+    specs: ['Intel i5', '6th Genration', '8GB Ram', '256 SSD'],
     image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=max&q=80&w=800',
     popular: false
   },
   {
     id: 6,
-    name: 'Refurbished MICROSOFT SURFACE 3',
-    desc: 'Stunning premium lightweight laptop with a brilliant high-resolution touch display and super responsive hardware.',
-    specs: ['INTEL CORE i5', '10th GEN..', '8 GB RAM', '256 GB SSD'],
+    name: 'Refurbished Dell Latitude 3510',
+    desc: 'Essential business laptop with a sleek modern design, perfect for students and professionals on the go.',
+    specs: ['Intel i3', '10th Genration', '8GB Ram', '256 SSD'],
     image: 'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?auto=format&fit=max&q=80&w=800',
     popular: false
   },
   {
-    id: 7,
-    name: 'Asus ZenBook',
-    desc: 'Ultra-portable and elegant with vibrant OLED displays perfect for media consumption.',
-    specs: ['Intel i5 / AMD Ryzen 7', '16GB RAM', '512GB PCIe SSD', 'ErgoLift Hinge'],
-    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800',
-    popular: true
+    id: 12,
+    name: 'Refurbished HP Probook 440 G7',
+    desc: 'Stylish, thin-and-light laptop designed to empower your workday with essential business features and modern aesthetic.',
+    specs: ['Intel i5', '10th Genration', '8GB Ram', '256 SSD'],
+    image: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800',
+    popular: false
   },
   {
     id: 8,
-    name: 'Dell XPS 13 & 15',
-    desc: 'Compact form factor, stunning InfinityEdge bezels, and premium carbon fiber build.',
-    specs: ['Intel Core i7 / i9', '16GB / 32GB RAM', '512GB / 1TB SSD', '4K Touch Display'],
+    name: 'Refurbished HP Elitebook 840 G6',
+    desc: 'Premium enterprise laptop offering robust performance, striking visual display, and high-end security features for professionals.',
+    specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
     image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
   {
     id: 9,
-    name: 'Lenovo IdeaPad',
-    desc: 'Everyday reliability and smooth performance for students and home users.',
-    specs: ['Intel i3 / Ryzen 3', '8GB RAM', '256GB SSD', 'FHD Anti-glare'],
-    image: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800',
+    name: 'Refurbished HP 250 G8',
+    desc: 'Budget-friendly business laptop delivering reliable performance for everyday tasks and seamless connectivity.',
+    specs: ['Intel i5', '11th Genration', '8GB Ram', '256 SSD'],
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
   {
     id: 10,
-    name: 'Microsoft Surface Laptop',
-    desc: 'Clean, minimalistic design with vibrant PixelSense touchscreens and Alcantara finish.',
-    specs: ['Intel Core i5 / i7', '8GB / 16GB RAM', '256GB SSD', 'Touchscreen'],
-    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro A1708',
+    desc: 'Premium lightweight aluminum build with stunning Retina display and reliable performance for professionals.',
+    specs: ['Intel i5 / i7', 'Year 2017', '8GB / 16GB Ram', '128GB/256GB SSD'],
+    image: '/images/macbook_pro_a1708.jpg',
     popular: false
   },
   {
     id: 11,
-    name: 'Acer Swift Series',
-    desc: 'Lightweight performance machines offering a superb balance of cost and portability.',
-    specs: ['Intel Core i5 / Ryzen 5', '8GB RAM', '512GB SSD', 'All-Day Battery'],
-    image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro A1989',
+    desc: 'Powerful computing with Touch Bar, dynamic vivid display, and fast storage for creative workflows.',
+    specs: ['Intel i5 / i7', 'Year 2018', '8GB / 16GB Ram', '256GB SSD'],
+    image: '/images/macbook_pro_a1989.jpg',
     popular: false
   },
   {
     id: 12,
-    name: 'HP Pavilion',
-    desc: 'Versatile mainstream laptops delivering dependable computing for everyone.',
-    specs: ['Intel Core i5 / i7', '8GB / 12GB RAM', '512GB SSD', 'B&O Audio'],
-    image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro A2251',
+    desc: 'Ultimate productivity laptop with enhanced Magic Keyboard and True Tone display for an immersive experience.',
+    specs: ['Intel i5 / i7', 'Year 2020', '8GB / 16GB Ram', '256GB SSD'],
+    image: '/images/macbook_pro_a2251.jpg',
     popular: false
   },
   {
     id: 13,
-    name: 'Asus ROG Zephyrus',
-    desc: 'Premium ultra-slim gaming and creator laptops with immense GPU power.',
-    specs: ['AMD Ryzen 9', '16GB / 32GB RAM', '1TB SSD', 'NVIDIA RTX 3060/3070'],
-    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro 15" A1990',
+    desc: 'Breathtaking 15-inch Retina display and exceptional performance for creative professionals with Touch Bar integration.',
+    specs: ['Intel i7 / i9', 'Year 2018', '16GB / 32GB Ram', '512GB SSD'],
+    image: '/images/macbook_pro_a1990.jpg',
     popular: true
   },
   {
     id: 14,
-    name: 'Lenovo Legion',
-    desc: 'Uncompromised cooling and raw performance for serious gamers and 3D pros.',
-    specs: ['Intel Core i7 / Ryzen 7', '16GB RAM', '1TB SSD', 'RTX Graphics'],
-    image: 'https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro 16" A2141',
+    desc: 'Immersive 16-inch Retina display with powerful processing capabilities, perfect for demanding multi-core workloads.',
+    specs: ['Intel i7', 'Year 2019', '16GB Ram', '512GB SSD'],
+    image: '/images/macbook_pro_a2141_i7.jpg',
     popular: false
   },
   {
     id: 15,
-    name: 'Refurbished Dell Latitude 5400',
-    desc: 'Premium business-class laptop offering unmatched durability, robust performance, and superior battery efficiency.',
-    specs: ['Intel Core i5 (8th Gen)', '8GB / 16GB DDR4 RAM', '256GB / 512GB NVMe SSD', '14" FHD Anti-Glare Display'],
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro 16" A2141',
+    desc: 'The ultimate professional powerhouse delivering top-tier performance for video editing, 3D rendering, and coding.',
+    specs: ['Intel i9', 'Year 2019', '16GB / 32GB Ram', '512GB / 1TB SSD'],
+    image: '/images/macbook_pro_a2141_i9.jpg',
     popular: false
   },
   {
     id: 16,
-    name: 'HP Omen',
-    desc: 'Sleek aesthetics with high-refresh-rate displays and enthusiast-grade internals.',
-    specs: ['Intel Core i7', '16GB RAM', '1TB PCIe SSD', '144Hz / 165Hz Display'],
-    image: 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&q=80&w=800',
-    popular: false
+    name: 'Used MacBook Pro M1 Pro 14"',
+    desc: 'Game-changing Apple Silicon performance, jaw-dropping Liquid Retina XDR display, and incredible battery life.',
+    specs: ['8-Core CPU & 14-Core GPU', 'Year 2021', '16GB RAM', '512GB SSD'],
+    image: '/images/macbook_m1_pro_14.jpg',
+    popular: true
   },
   {
     id: 17,
-    name: 'Acer Predator',
-    desc: 'Aggressive styling and extreme frame rates for competitive esports titles.',
-    specs: ['Intel Core i7', '16GB / 32GB RAM', '1TB SSD', 'NVIDIA Dedicated GPU'],
-    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro M2 Pro 14"',
+    desc: 'Exceptional sustained performance, advanced connectivity, and phenomenal battery life in a remarkably portable package.',
+    specs: ['12-Core CPU & 30-Core GPU', 'Year 2022/2023', '16GB RAM', '512GB SSD'],
+    image: '/images/macbook_m2_pro_14.jpg',
     popular: false
   },
   {
     id: 18,
-    name: 'Apple MacBook Pro (M-Series)',
-    desc: 'Industry-leading silicon performance and Liquid Retina XDR displays.',
-    specs: ['Apple M1 / M2 Pro', '16GB Uni Memory', '512GB SSD', 'macOS Ventura'],
-    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800',
+    name: 'Used MacBook Pro M3 Pro 14"',
+    desc: 'The next generation of Apple Silicon offering mind-blowing speed, hardware-accelerated ray tracing, and a stunning Space Black finish.',
+    specs: ['12-Core CPU & 19-Core GPU', 'Year 2023/2024', '18GB RAM', '512GB SSD'],
+    image: '/images/macbook_m3_pro_14.jpg',
     popular: true
-  },
-  {
-    id: 19,
-    name: 'LG Gram',
-    desc: 'Unbelievably light footprint with incredible battery stamina for frequent travelers.',
-    specs: ['Intel Core i5 / i7', '16GB RAM', '512GB SSD', 'Ultra-Lightweight (Below 1kg)'],
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=800',
-    popular: false
-  },
-  {
-    id: 20,
-    name: 'Microsoft Surface Pro',
-    desc: 'The best tablet-to-laptop hybrid offering true flexibility and pen support.',
-    specs: ['Intel Core i5', '8GB RAM', '256GB SSD', 'Detachable Form Factor'],
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
-    popular: false
-  },
-  {
-    id: 21,
-    name: 'Asus VivoBook',
-    desc: 'Colorful and energetic mainstream laptops with solid everyday productivity features.',
-    specs: ['Intel Core i3 / i5', '8GB RAM', '256GB / 512GB SSD', 'Color-Blocked Enter Key'],
-    image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=800',
-    popular: false
-  },
-  {
-    id: 22,
-    name: 'Acer Aspire Series',
-    desc: 'The quintessential budget-friendly workstation that gets the job done effectively.',
-    specs: ['Intel Core i3 / i5', '8GB RAM', '256GB NVMe SSD', 'Reliable Battery'],
-    image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=800',
-    popular: false
-  },
-  {
-    id: 23,
-    name: 'Dell Inspiron',
-    desc: 'A staple computing device with versatile options for students and home offices.',
-    specs: ['Intel Core i5', '8GB RAM', '512GB SSD', 'FHD Display'],
-    image: 'https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&q=80&w=800',
-    popular: false
-  },
-  {
-    id: 24,
-    name: 'Razer Blade Stealth',
-    desc: 'Premium CNC aluminum build merging ultrabook portability with high performance.',
-    specs: ['Intel Core i7', '16GB RAM', '512GB SSD', '120Hz / 144Hz Display'],
-    image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800',
-    popular: false
   }
 ];
 
