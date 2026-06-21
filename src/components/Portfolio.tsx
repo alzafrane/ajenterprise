@@ -1,52 +1,71 @@
-import { ExternalLink, Tag } from 'lucide-react';
+import React, { useState } from 'react';
+import { ExternalLink, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 
-const products = [
+interface Product {
+  id: number;
+  name: string;
+  desc: string;
+  specs: string[];
+  image?: string;
+  images?: string[];
+  popular: boolean;
+}
+
+const products: Product[] = [
   {
     id: 1,
-    name: 'Dell Latitude / OptiPlex Series',
+    name: 'Refurbished Dell Latitude 5400',
     desc: 'Business-class durability with robust performance. Ideal for everyday office work and heavy multitasking.',
-    specs: ['Intel Core i5 / i7', '8GB / 16GB RAM', '256GB / 512GB SSD', 'Windows 10/11 Pro'],
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
+    specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
+    images: [
+      '/images/dell_5400_open.jpg',
+      '/images/dell_5400_closed.jpg',
+      '/images/dell_5400_angle.jpg'
+    ],
     popular: true
   },
   {
     id: 2,
-    name: 'HP EliteBook / ProBook',
+    name: 'Refurbished Dell Latitude 7280',
     desc: 'Sleek design paired with absolute performance and enterprise security features.',
-    specs: ['Intel Core i5 / Ryzen 5', '8GB / 16GB RAM', '256GB / 512GB SSD', '14" / 15.6" FHD Display'],
-    image: 'https://images.unsplash.com/photo-1629131726692-1accd0c53ce0?auto=format&fit=crop&q=80&w=800',
+    specs: ['Intel i7', '7th Genration', '8GB Ram', '256 SSD'],
+    images: [
+      '/images/dell_7280_open_front.jpg',
+      '/images/dell_7280_open_angle.jpg',
+      '/images/dell_7280_closed_top.jpg'
+    ],
     popular: true
   },
   {
     id: 3,
-    name: 'Lenovo ThinkPad',
-    desc: 'The gold standard for typing experience and legendary reliability for programmers and pros.',
-    specs: ['Intel Core i5 / i7', '16GB RAM', '512GB SSD', 'Legendary Keyboard'],
-    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800',
+    name: 'Refurbished MacBook Pro M2 Pro',
+    desc: 'Ultimate power and productivity powerhouse with Apple M2 Pro silicon, stunning Liquid Retina XDR display, and supreme battery life.',
+    specs: ['Apple M2 Pro chip', '16GB Ram', '512GB SSD Drive', '12-core CPU | 30-core GPU'],
+    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=max&q=80&w=800',
     popular: false
   },
   {
     id: 4,
-    name: 'Apple MacBook Air / Pro',
-    desc: 'Premium aluminum build with excellent battery life for creators and developers.',
-    specs: ['Intel Core i5 / M1', '8GB RAM', '256GB SSD', 'macOS Space Gray'],
-    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800',
+    name: 'Refurbished Dell Latitude 3400',
+    desc: 'Reliable and durable companion perfect for office productivity, studying, and everyday utility tasks.',
+    specs: ['Intel Core i5', '8th Gen..', '8 Gb Ram', '256 Gb SSD'],
+    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=max&q=80&w=800',
     popular: false
   },
   {
     id: 5,
-    name: 'Dell Precision Workstation',
-    desc: 'Heavy-duty processing power designed for demanding tasks like 3D rendering and CAD.',
-    specs: ['Intel Core i7 / Xeon', '16GB / 32GB RAM', '512GB / 1TB SSD', 'Dedicated NVIDIA GPU'],
-    image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800',
+    name: 'Refurbished Dell Latitude 7440',
+    desc: 'Ultra-portable elite business laptop with premium aluminum design, robust built-in security, and speedy operations.',
+    specs: ['Intel Core i5', '4th GEN', '8 Gb RAM', '256 Gb SSD'],
+    image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=max&q=80&w=800',
     popular: false
   },
   {
     id: 6,
-    name: 'HP Spectre / Envy',
-    desc: 'Ultra-thin, premium 2-in-1 convertible laptops with stunning displays for creators.',
-    specs: ['Intel Core i5 / i7', '16GB RAM', '512GB SSD', 'Touchscreen 360°'],
-    image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&q=80&w=800',
+    name: 'Refurbished MICROSOFT SURFACE 3',
+    desc: 'Stunning premium lightweight laptop with a brilliant high-resolution touch display and super responsive hardware.',
+    specs: ['INTEL CORE i5', '10th GEN..', '8 GB RAM', '256 GB SSD'],
+    image: 'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?auto=format&fit=max&q=80&w=800',
     popular: false
   },
   {
@@ -115,10 +134,10 @@ const products = [
   },
   {
     id: 15,
-    name: 'Dell G-Series',
-    desc: 'Durable, entry-level to mid-range gaming laptops with robust thermals.',
-    specs: ['Intel Core i5', '8GB / 16GB RAM', '512GB NVMe SSD', 'GTX/RTX Options'],
-    image: 'https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?auto=format&fit=crop&q=80&w=800',
+    name: 'Refurbished Dell Latitude 5400',
+    desc: 'Premium business-class laptop offering unmatched durability, robust performance, and superior battery efficiency.',
+    specs: ['Intel Core i5 (8th Gen)', '8GB / 16GB DDR4 RAM', '256GB / 512GB NVMe SSD', '14" FHD Anti-Glare Display'],
+    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
     popular: false
   },
   {
@@ -195,6 +214,147 @@ const products = [
   }
 ];
 
+function ProductCard({ product }: { product: Product; key?: any }) {
+  const baseImages = product.images || (product.image ? [product.image] : []);
+  
+  // Dynamically assemble exactly 3 high-quality, relevant images for each product
+  let images = [...baseImages];
+  if (images.length === 0) {
+    images = [
+      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800'
+    ];
+  } else if (images.length === 1) {
+    const single = images[0];
+    if (product.name.toLowerCase().includes('macbook') || product.name.toLowerCase().includes('apple')) {
+      images = [
+        single,
+        'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800',
+        'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800'
+      ];
+    } else if (product.name.toLowerCase().includes('surface') || product.name.toLowerCase().includes('microsoft')) {
+      images = [
+        single,
+        'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?auto=format&fit=crop&q=80&w=800',
+        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800'
+      ];
+    } else if (product.name.toLowerCase().includes('rog') || product.name.toLowerCase().includes('gaming') || product.name.toLowerCase().includes('predator') || product.name.toLowerCase().includes('omen') || product.name.toLowerCase().includes('zephyrus')) {
+      images = [
+        single,
+        'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&q=80&w=800',
+        'https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&q=80&w=800'
+      ];
+    } else {
+      images = [
+        single,
+        'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800',
+        'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800'
+      ];
+    }
+  } else if (images.length === 2) {
+    images = [
+      images[0],
+      images[1],
+      'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800'
+    ];
+  }
+
+  const [currentIdx, setCurrentIdx] = useState(0);
+
+  const prevSlide = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIdx((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const nextSlide = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIdx((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  return (
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group relative flex flex-col">
+      {product.popular && (
+        <div className="absolute top-3 right-3 z-10 bg-primary text-white text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+          <Tag size={11} /> Bestseller
+        </div>
+      )}
+      <div className="relative h-64 overflow-hidden bg-slate-50/50 flex items-center justify-center border-b border-gray-100 group/slider">
+        {images.length > 0 ? (
+          <img 
+            src={images[currentIdx]} 
+            alt={`${product.name} - view ${currentIdx + 1}`} 
+            className="w-full h-full object-cover transition-transform duration-500 scale-100"
+            referrerPolicy="no-referrer"
+          />
+        ) : (
+          <div className="text-gray-400 text-sm">No image available</div>
+        )}
+
+        {images.length > 1 && (
+          <>
+            {/* Left Button */}
+            <button
+              onClick={prevSlide}
+              aria-label="Previous image"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 md:p-1.5 rounded-full shadow-md opacity-100 md:opacity-0 md:group-hover/slider:opacity-100 transition-all duration-200 z-10 cursor-pointer"
+            >
+              <ChevronLeft className="w-5 h-5 md:w-4 md:h-4" />
+            </button>
+            {/* Right Button */}
+            <button
+              onClick={nextSlide}
+              aria-label="Next image"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 md:p-1.5 rounded-full shadow-md opacity-100 md:opacity-0 md:group-hover/slider:opacity-100 transition-all duration-200 z-10 cursor-pointer"
+            >
+              <ChevronRight className="w-5 h-5 md:w-4 md:h-4" />
+            </button>
+
+            {/* Pagination dots */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 bg-black/30 px-2.5 py-1 rounded-full backdrop-blur-[2px]">
+              {images.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setCurrentIdx(idx);
+                  }}
+                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
+                    idx === currentIdx ? 'bg-primary scale-125' : 'bg-white/60 hover:bg-white'
+                  }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+      <div className="p-6 flex-grow flex flex-col">
+        <h4 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h4>
+        <div className="space-y-2 mb-6 mt-4">
+          {product.specs.map((spec, i) => (
+             <div key={i} className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 px-2 py-1.5 rounded border border-gray-100">
+              <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>
+              <span className="truncate">{spec}</span>
+            </div>
+          ))}
+        </div>
+        <a 
+          href={`https://wa.me/919601196085?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full mt-auto bg-gray-900 hover:bg-gray-800 text-white flex flex-row items-center justify-center gap-2 py-3 rounded-xl font-medium transition-colors"
+        >
+          Inquire Price <ExternalLink size={16} />
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function Portfolio() {
   return (
     <section id="laptops" className="pt-12 pb-20 bg-gray-50">
@@ -207,42 +367,7 @@ export default function Portfolio() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product) => (
-            <div 
-              key={product.id} 
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 group relative flex flex-col"
-            >
-              {product.popular && (
-                <div className="absolute top-4 right-4 z-10 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1 shadow-md">
-                  <Tag size={12} /> Bestseller
-                </div>
-              )}
-              <div className="relative h-48 overflow-hidden bg-gray-100">
-                <img 
-                  src={product.image} 
-                  alt={product.name} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 flex-grow flex flex-col">
-                <h4 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h4>
-                <div className="space-y-2 mb-6 mt-4">
-                  {product.specs.map((spec, i) => (
-                     <div key={i} className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 px-2 py-1.5 rounded border border-gray-100">
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>
-                      <span className="truncate">{spec}</span>
-                    </div>
-                  ))}
-                </div>
-                <a 
-                  href={`https://wa.me/919601196085?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full mt-auto bg-gray-900 hover:bg-gray-800 text-white flex flex-row items-center justify-center gap-2 py-3 rounded-xl font-medium transition-colors"
-                >
-                  Inquire Price <ExternalLink size={16} />
-                </a>
-              </div>
-            </div>
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
