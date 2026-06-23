@@ -97,7 +97,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro A1708',
     desc: 'Premium lightweight aluminum build with stunning Retina display and reliable performance for professionals.',
     specs: ['Intel i5 / i7', 'Year 2017', '8GB / 16GB Ram', '128GB/256GB SSD'],
-    image: '/images/macbook_pro_a1708.jpg',
+    images: [
+      '/images/macbook_a1708_open.jpg',
+      '/images/macbook_a1708_closed.jpg',
+      '/images/macbook_a1708_keyboard.jpg'
+    ],
     popular: false
   },
   {
@@ -105,7 +109,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro A1989',
     desc: 'Powerful computing with Touch Bar, dynamic vivid display, and fast storage for creative workflows.',
     specs: ['Intel i5 / i7', 'Year 2018', '8GB / 16GB Ram', '256GB SSD'],
-    image: '/images/macbook_pro_a1989.jpg',
+    images: [
+      '/images/macbook_a1989_open.jpg',
+      '/images/macbook_a1989_closed.jpg',
+      '/images/macbook_a1989_keyboard.jpg'
+    ],
     popular: false
   },
   {
@@ -113,7 +121,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro A2251',
     desc: 'Ultimate productivity laptop with enhanced Magic Keyboard and True Tone display for an immersive experience.',
     specs: ['Intel i5 / i7', 'Year 2020', '8GB / 16GB Ram', '256GB SSD'],
-    image: '/images/macbook_pro_a2251.jpg',
+    images: [
+      '/images/macbook_pro_open.jpg',
+      '/images/macbook_pro_closed.jpg',
+      '/images/macbook_pro_keyboard.jpg'
+    ],
     popular: false
   },
   {

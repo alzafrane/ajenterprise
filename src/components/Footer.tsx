@@ -10,9 +10,6 @@ export default function Footer() {
             <div className="font-display font-extrabold text-3xl text-white tracking-tight">
               AJ <span className="text-primary">Enterprise</span>
             </div>
-            <p className="text-[15px] text-slate-400 leading-relaxed max-w-sm pr-4">
-              Ahmedabad's premier destination for high-quality used and refurbished laptops. Dedicated to providing reliable technology at affordable prices.
-            </p>
           </div>
           
           {/* Quick Links */}
@@ -33,7 +30,6 @@ export default function Footer() {
               <span className="text-[15px] text-slate-300">Refurbished Laptops</span>
               <span className="text-[15px] text-slate-300">Computer Sales</span>
               <span className="text-[15px] text-slate-300">Desktop Assembly</span>
-              <span className="text-[15px] text-slate-300">IT Procurement</span>
             </div>
           </div>
 
