@@ -41,7 +41,11 @@ const products: Product[] = [
     name: 'Refurbished Dell Latitude 3400',
     desc: 'Reliable and durable companion perfect for office productivity, studying, and everyday utility tasks.',
     specs: ['Intel Core i5', '8th Gen..', '8 Gb Ram', '256 Gb SSD'],
-    image: 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=max&q=80&w=800',
+    images: [
+      '/images/dell_3400_open.jpg',
+      '/images/dell_3400_closed.jpg',
+      '/images/dell_3400_kbd.jpg'
+    ],
     popular: false
   },
   {
@@ -49,7 +53,11 @@ const products: Product[] = [
     name: 'Refurbished Dell Latitude 5490',
     desc: 'Business-class durability with robust performance. Ideal for everyday office work and heavy multitasking.',
     specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
-    image: 'https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&q=80&w=800',
+    images: [
+      '/images/dell_5400_open.jpg',
+      '/images/dell_5400_closed.jpg',
+      '/images/dell_5400_angle.jpg'
+    ],
     popular: true
   },
   {
@@ -57,7 +65,11 @@ const products: Product[] = [
     name: 'Refurbished Dell Latitude 5480',
     desc: 'Reliable and durable business companion perfect for productivity and everyday utility tasks.',
     specs: ['Intel i5', '6th Genration', '8GB Ram', '256 SSD'],
-    image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=max&q=80&w=800',
+    images: [
+      '/images/dell_5480_open.jpg',
+      '/images/dell_5400_closed.jpg',
+      '/images/dell_3400_kbd.jpg'
+    ],
     popular: false
   },
   {
@@ -65,7 +77,11 @@ const products: Product[] = [
     name: 'Refurbished Dell Latitude 3510',
     desc: 'Essential business laptop with a sleek modern design, perfect for students and professionals on the go.',
     specs: ['Intel i3', '10th Genration', '8GB Ram', '256 SSD'],
-    image: 'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?auto=format&fit=max&q=80&w=800',
+    images: [
+      '/images/dell_3400_open.jpg',
+      '/images/dell_5400_closed.jpg',
+      '/images/dell_3400_kbd.jpg'
+    ],
     popular: false
   },
   {
@@ -73,7 +89,11 @@ const products: Product[] = [
     name: 'Refurbished HP Probook 440 G7',
     desc: 'Stylish, thin-and-light laptop designed to empower your workday with essential business features and modern aesthetic.',
     specs: ['Intel i5', '10th Genration', '8GB Ram', '256 SSD'],
-    image: 'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800',
+    images: [
+      '/images/hp_probook_open.jpg',
+      'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800',
+      '/images/macbook_a1708_keyboard.jpg'
+    ],
     popular: false
   },
   {
@@ -81,7 +101,11 @@ const products: Product[] = [
     name: 'Refurbished HP Elitebook 840 G6',
     desc: 'Premium enterprise laptop offering robust performance, striking visual display, and high-end security features for professionals.',
     specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
-    image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
+      '/images/hp_probook_open.jpg',
+      '/images/macbook_a1708_keyboard.jpg'
+    ],
     popular: false
   },
   {
@@ -89,7 +113,11 @@ const products: Product[] = [
     name: 'Refurbished HP 250 G8',
     desc: 'Budget-friendly business laptop delivering reliable performance for everyday tasks and seamless connectivity.',
     specs: ['Intel i5', '11th Genration', '8GB Ram', '256 SSD'],
-    image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800',
+    images: [
+      '/images/hp_probook_open.jpg',
+      'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800',
+      '/images/macbook_a1708_keyboard.jpg'
+    ],
     popular: false
   },
   {
@@ -133,7 +161,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro 15" A1990',
     desc: 'Breathtaking 15-inch Retina display and exceptional performance for creative professionals with Touch Bar integration.',
     specs: ['Intel i7 / i9', 'Year 2018', '16GB / 32GB Ram', '512GB SSD'],
-    image: '/images/macbook_pro_a1990.jpg',
+    images: [
+      '/images/macbook_pro_a1990.jpg',
+      '/images/macbook_a1989_closed.jpg',
+      '/images/macbook_a1989_keyboard.jpg'
+    ],
     popular: true
   },
   {
@@ -141,7 +173,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro 16" A2141',
     desc: 'Immersive 16-inch Retina display with powerful processing capabilities, perfect for demanding multi-core workloads.',
     specs: ['Intel i7', 'Year 2019', '16GB Ram', '512GB SSD'],
-    image: '/images/macbook_pro_a2141_i7.jpg',
+    images: [
+      '/images/macbook_pro_a2141_i7.jpg',
+      '/images/macbook_m1_closed.jpg',
+      '/images/macbook_m1_kbd.jpg'
+    ],
     popular: false
   },
   {
@@ -149,7 +185,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro 16" A2141',
     desc: 'The ultimate professional powerhouse delivering top-tier performance for video editing, 3D rendering, and coding.',
     specs: ['Intel i9', 'Year 2019', '16GB / 32GB Ram', '512GB / 1TB SSD'],
-    image: '/images/macbook_pro_a2141_i9.jpg',
+    images: [
+      '/images/macbook_pro_a2141_i9.jpg',
+      '/images/macbook_m1_closed.jpg',
+      '/images/macbook_m1_kbd.jpg'
+    ],
     popular: false
   },
   {
