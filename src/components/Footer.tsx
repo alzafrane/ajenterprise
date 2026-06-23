@@ -22,7 +22,6 @@ export default function Footer() {
               <a href="#home" className="hover:text-primary transition-colors text-[15px] text-slate-300">Home</a>
               <a href="#laptops" className="hover:text-primary transition-colors text-[15px] text-slate-300">Portfolio</a>
               <a href="#testimonials" className="hover:text-primary transition-colors text-[15px] text-slate-300">Testimonials</a>
-              <a href="#contact" className="hover:text-primary transition-colors text-[15px] text-slate-300">Contact</a>
             </div>
           </div>
 

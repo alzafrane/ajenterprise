@@ -23,7 +23,6 @@ export default function Header() {
             <a href="#home" className="text-gray-500 hover:text-gray-900 font-semibold transition-colors">Home</a>
             <a href="#laptops" className="text-gray-500 hover:text-gray-900 font-semibold transition-colors">Portfolio</a>
             <a href="#testimonials" className="text-gray-500 hover:text-gray-900 font-semibold transition-colors">Testimonials</a>
-            <a href="#contact" className="text-gray-500 hover:text-gray-900 font-semibold transition-colors">Contact</a>
           </nav>
 
           <div className="hidden md:block">
@@ -45,7 +44,6 @@ export default function Header() {
             <a href="#home" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md font-medium">Home</a>
             <a href="#laptops" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md font-medium">Portfolio</a>
             <a href="#testimonials" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md font-medium">Testimonials</a>
-            <a href="#contact" onClick={() => setIsOpen(false)} className="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary rounded-md font-medium">Contact</a>
           </div>
         </div>
       )}

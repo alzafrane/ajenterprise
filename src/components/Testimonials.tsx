@@ -4,17 +4,17 @@ const testimonials = [
   {
     name: 'Rahul Desai',
     role: 'Student',
-    text: 'Bought a Dell Latitude for my college projects. Condition was totally like new, battery backup is great. Very prompt service by AJ Enterprise.',
+    text: 'Bought a Dell Latitude for my college projects. Condition was totally like new, battery backup is great. Very prompt service by AJ Enterprise.'
   },
   {
     name: 'Pooja Shah',
     role: 'Freelancer',
-    text: 'Needed a reliable laptop for video editing but had a strict budget. They suggested an HP EliteBook with upgraded RAM. It runs flawlessly!',
+    text: 'Needed a reliable laptop for video editing but had a strict budget. They suggested an HP EliteBook with upgraded RAM. It runs flawlessly!'
   },
   {
     name: 'Amit Patel',
     role: 'Business Owner',
-    text: 'Procured 5 Lenovo ThinkPads for my office staff. The bulk pricing was excellent and the systems are running perfectly. Highly recommended in Ahmedabad.',
+    text: 'Procured 5 Lenovo ThinkPads for my office staff. The bulk pricing was excellent and the systems are running perfectly. Highly recommended in Ahmedabad.'
   }
 ];
 
