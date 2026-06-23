@@ -122,9 +122,9 @@ const products: Product[] = [
     desc: 'Ultimate productivity laptop with enhanced Magic Keyboard and True Tone display for an immersive experience.',
     specs: ['Intel i5 / i7', 'Year 2020', '8GB / 16GB Ram', '256GB SSD'],
     images: [
-      '/images/macbook_pro_open.jpg',
-      '/images/macbook_pro_closed.jpg',
-      '/images/macbook_pro_keyboard.jpg'
+      '/images/macbook_a2251_open.jpg',
+      '/images/macbook_a2251_closed.jpg',
+      '/images/macbook_a2251_keyboard.jpg'
     ],
     popular: false
   },
@@ -157,7 +157,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro M1 Pro 14"',
     desc: 'Game-changing Apple Silicon performance, jaw-dropping Liquid Retina XDR display, and incredible battery life.',
     specs: ['8-Core CPU & 14-Core GPU', 'Year 2021', '16GB RAM', '512GB SSD'],
-    image: '/images/macbook_m1_pro_14.jpg',
+    images: [
+      '/images/macbook_m1_open.jpg',
+      '/images/macbook_m1_closed.jpg',
+      '/images/macbook_m1_kbd.jpg'
+    ],
     popular: true
   },
   {
@@ -165,7 +169,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro M2 Pro 14"',
     desc: 'Exceptional sustained performance, advanced connectivity, and phenomenal battery life in a remarkably portable package.',
     specs: ['12-Core CPU & 30-Core GPU', 'Year 2022/2023', '16GB RAM', '512GB SSD'],
-    image: '/images/macbook_m2_pro_14.jpg',
+    images: [
+      '/images/macbook_m2_open.jpg',
+      '/images/macbook_m2_closed.jpg',
+      '/images/macbook_m2_kbd.jpg'
+    ],
     popular: false
   },
   {
@@ -173,7 +181,11 @@ const products: Product[] = [
     name: 'Used MacBook Pro M3 Pro 14"',
     desc: 'The next generation of Apple Silicon offering mind-blowing speed, hardware-accelerated ray tracing, and a stunning Space Black finish.',
     specs: ['12-Core CPU & 19-Core GPU', 'Year 2023/2024', '18GB RAM', '512GB SSD'],
-    image: '/images/macbook_m3_pro_14.jpg',
+    images: [
+      '/images/macbook_m3_open.jpg',
+      '/images/macbook_m3_closed.jpg',
+      '/images/macbook_m3_kbd.jpg'
+    ],
     popular: true
   }
 ];
