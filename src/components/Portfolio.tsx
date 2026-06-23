@@ -91,8 +91,8 @@ const products: Product[] = [
     specs: ['Intel i5', '10th Genration', '8GB Ram', '256 SSD'],
     images: [
       '/images/hp_probook_open.jpg',
-      'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800',
-      '/images/macbook_a1708_keyboard.jpg'
+      '/images/macbook_a1708_closed.jpg',
+      '/images/dell_3400_kbd.jpg'
     ],
     popular: false
   },
@@ -102,9 +102,9 @@ const products: Product[] = [
     desc: 'Premium enterprise laptop offering robust performance, striking visual display, and high-end security features for professionals.',
     specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
     images: [
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
       '/images/hp_probook_open.jpg',
-      '/images/macbook_a1708_keyboard.jpg'
+      '/images/macbook_a1708_closed.jpg',
+      '/images/dell_3400_kbd.jpg'
     ],
     popular: false
   },
@@ -114,9 +114,9 @@ const products: Product[] = [
     desc: 'Budget-friendly business laptop delivering reliable performance for everyday tasks and seamless connectivity.',
     specs: ['Intel i5', '11th Genration', '8GB Ram', '256 SSD'],
     images: [
-      '/images/hp_probook_open.jpg',
-      'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800',
-      '/images/macbook_a1708_keyboard.jpg'
+      '/images/dell_3400_open.jpg',
+      '/images/dell_3400_closed.jpg',
+      '/images/dell_3400_kbd.jpg'
     ],
     popular: false
   },
@@ -140,7 +140,7 @@ const products: Product[] = [
     images: [
       '/images/macbook_a1989_open.jpg',
       '/images/macbook_a1989_closed.jpg',
-      '/images/macbook_a1989_keyboard.jpg'
+      '/images/macbook_a2251_keyboard.jpg'
     ],
     popular: false
   },
@@ -164,7 +164,7 @@ const products: Product[] = [
     images: [
       '/images/macbook_pro_a1990.jpg',
       '/images/macbook_a1989_closed.jpg',
-      '/images/macbook_a1989_keyboard.jpg'
+      '/images/macbook_a2251_keyboard.jpg'
     ],
     popular: true
   },
@@ -175,8 +175,8 @@ const products: Product[] = [
     specs: ['Intel i7', 'Year 2019', '16GB Ram', '512GB SSD'],
     images: [
       '/images/macbook_pro_a2141_i7.jpg',
-      '/images/macbook_m1_closed.jpg',
-      '/images/macbook_m1_kbd.jpg'
+      '/images/macbook_a2251_closed.jpg',
+      '/images/macbook_a2251_keyboard.jpg'
     ],
     popular: false
   },
@@ -187,8 +187,8 @@ const products: Product[] = [
     specs: ['Intel i9', 'Year 2019', '16GB / 32GB Ram', '512GB / 1TB SSD'],
     images: [
       '/images/macbook_pro_a2141_i9.jpg',
-      '/images/macbook_m1_closed.jpg',
-      '/images/macbook_m1_kbd.jpg'
+      '/images/macbook_a2251_closed.jpg',
+      '/images/macbook_a2251_keyboard.jpg'
     ],
     popular: false
   },
