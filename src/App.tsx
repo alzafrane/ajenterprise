@@ -9,6 +9,7 @@ import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
 import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
+import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
 import ProductDetail from './components/ProductDetail';
@@ -21,6 +22,7 @@ function HomePage() {
       <Portfolio />
       <WhyChooseUs />
       <Testimonials />
+      <FAQ />
     </main>
   );
 }
