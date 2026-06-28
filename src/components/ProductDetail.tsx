@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   ChevronRight,
@@ -19,6 +19,14 @@ import { products, createSlug } from "../data";
 export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>();
   const product = products.find((p) => createSlug(p.name) === slug);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setActiveImageIdx(0);
+    setSelectedRam("8GB");
+    setSelectedStorage("256GB");
+    setSelectedWarranty("Free 1 year");
+  }, [slug]);
 
   const [activeImageIdx, setActiveImageIdx] = useState(0);
   const [selectedRam, setSelectedRam] = useState("8GB");
@@ -54,11 +62,6 @@ export default function ProductDetail() {
           "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800",
           "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800",
         ]);
-
-  const price = product.price || 26999;
-  const originalPrice = product.originalPrice || 89000;
-  const savings = originalPrice - price;
-  const discountPercent = Math.round((savings / originalPrice) * 100);
 
   const ramOptions = ["8GB", "16GB", "32GB"];
   const storageOptions = ["256GB", "512GB", "1TB"];
@@ -122,7 +125,7 @@ export default function ProductDetail() {
             </div>
 
             {/* Product Tabs (Specs, About, etc) */}
-            <div className="mt-12">
+            <div className="mt-16 w-full hidden lg:block">
               <div className="flex border-b border-gray-200 gap-8">
                 <button className="pb-4 font-bold text-gray-900 border-b-2 border-primary">
                   Specifications
@@ -142,7 +145,7 @@ export default function ProductDetail() {
                 <h3 className="text-lg font-bold text-gray-900 mb-6">
                   Specifications
                 </h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
                     <Monitor className="text-blue-500 mb-2" size={20} />
                     <div className="text-xs text-gray-500 uppercase font-semibold mb-1">
@@ -183,19 +186,7 @@ export default function ProductDetail() {
           </div>
 
           {/* Right Column: Product Details */}
-          <div className="flex flex-col">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">
-                {product.name.split(" ")[1] || "Brand"}
-              </span>
-              <span className="bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
-                Student-friendly
-              </span>
-              <span className="bg-gray-100 text-gray-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">
-                Excellent
-              </span>
-            </div>
-
+          <div className="flex flex-col lg:sticky lg:top-8 h-fit">
             <div className="flex items-start justify-between gap-4 mb-3">
               <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
                 {product.name} | {product.specs[0]} | 14" HD Screen | Windows 11
@@ -214,26 +205,6 @@ export default function ProductDetail() {
                   {copied ? "Copied!" : "Share"}
                 </span>
               </button>
-            </div>
-
-            <div className="flex items-center gap-4 mb-4">
-              <div className="flex items-center gap-1">
-                <div className="flex text-yellow-400">
-                  <Star size={14} fill="currentColor" />
-                  <Star size={14} fill="currentColor" />
-                  <Star size={14} fill="currentColor" />
-                  <Star size={14} fill="currentColor" />
-                  <Star
-                    size={14}
-                    fill="currentColor"
-                    className="text-gray-300"
-                  />
-                </div>
-                <span className="text-sm font-medium text-gray-700 ml-1">
-                  4.4
-                </span>
-                <span className="text-sm text-gray-400">(19)</span>
-              </div>
             </div>
 
             <div className="flex items-center gap-2 mb-6 pb-6 border-b border-gray-100">
@@ -334,7 +305,7 @@ export default function ProductDetail() {
               </div>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-8 pt-8 border-t border-gray-100">
               <a
                 href={`https://wa.me/919601196085?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}%20with%20${selectedRam}%20RAM%20and%20${selectedStorage}%20Storage.`}
                 target="_blank"
@@ -348,6 +319,134 @@ export default function ProductDetail() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* Product Tabs Mobile */}
+        <div className="mt-8 block lg:hidden w-full">
+          <div className="flex border-b border-gray-200 gap-8 overflow-x-auto scrollbar-hide">
+            <button className="pb-4 font-bold text-gray-900 border-b-2 border-primary whitespace-nowrap">
+              Specifications
+            </button>
+            <button className="pb-4 font-medium text-gray-500 hover:text-gray-900 whitespace-nowrap">
+              About
+            </button>
+            <button className="pb-4 font-medium text-gray-500 hover:text-gray-900 whitespace-nowrap">
+              Warranty
+            </button>
+            <button className="pb-4 font-medium text-gray-500 hover:text-gray-900 whitespace-nowrap">
+              Condition
+            </button>
+          </div>
+
+          <div className="py-8">
+            <h3 className="text-lg font-bold text-gray-900 mb-6">
+              Specifications
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                <Monitor className="text-blue-500 mb-2" size={20} />
+                <div className="text-xs text-gray-500 uppercase font-semibold mb-1">
+                  Screen Size
+                </div>
+                <div className="text-sm font-medium text-gray-900">14"</div>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                <Cpu className="text-purple-500 mb-2" size={20} />
+                <div className="text-xs text-gray-500 uppercase font-semibold mb-1">
+                  Processor
+                </div>
+                <div className="text-sm font-medium text-gray-900">
+                  {product.specs[0]}
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                <HardDrive className="text-orange-500 mb-2" size={20} />
+                <div className="text-xs text-gray-500 uppercase font-semibold mb-1">
+                  Storage
+                </div>
+                <div className="text-sm font-medium text-gray-900">
+                  {product.specs[3] || "256GB SSD"}
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-100">
+                <CheckCircle2 className="text-green-500 mb-2" size={20} />
+                <div className="text-xs text-gray-500 uppercase font-semibold mb-1">
+                  Generation
+                </div>
+                <div className="text-sm font-medium text-gray-900">
+                  {product.specs[1] || "-"}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* You May Also Like Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-100">
+        <h2 className="text-2xl font-bold text-gray-900 mb-8">
+          You May Also Like
+        </h2>
+        <div
+          className="flex gap-4 sm:gap-6 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide"
+          style={{ scrollBehavior: "smooth" }}
+        >
+          {products
+            .filter(
+              (p) =>
+                p.id !== product.id &&
+                p.name.split(" ")[0] === product.name.split(" ")[0],
+            )
+            .concat(
+              products.filter(
+                (p) =>
+                  p.id !== product.id &&
+                  p.name.split(" ")[0] !== product.name.split(" ")[0],
+              ),
+            )
+            .slice(0, 8)
+            .map((p) => (
+              <Link
+                key={p.id}
+                to={`/product/${createSlug(p.name)}`}
+                className="group w-[260px] sm:w-[280px] shrink-0 snap-start block bg-white rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 overflow-hidden"
+              >
+                <div className="relative aspect-[4/3] bg-slate-50 flex items-center justify-center p-4">
+                  <img
+                    src={
+                      p.images?.[0] ||
+                      p.image ||
+                      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800"
+                    }
+                    alt={p.name}
+                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+                <div className="p-4 sm:p-5">
+                  <div className="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5">
+                    {p.name.split(" ")[1] || "Brand"}
+                  </div>
+                  <h3 className="text-sm font-bold text-gray-900 line-clamp-2 mb-2 group-hover:text-primary transition-colors">
+                    {p.name}
+                  </h3>
+                  <div className="flex items-center gap-1 mb-3">
+                    <div className="flex text-yellow-400">
+                      <Star size={12} fill="currentColor" />
+                      <Star size={12} fill="currentColor" />
+                      <Star size={12} fill="currentColor" />
+                      <Star size={12} fill="currentColor" />
+                      <Star
+                        size={12}
+                        fill="currentColor"
+                        className="text-gray-300"
+                      />
+                    </div>
+                    <span className="text-[10px] text-gray-400">(4.4)</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
         </div>
       </div>
     </div>

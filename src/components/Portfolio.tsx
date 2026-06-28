@@ -139,7 +139,7 @@ function ProductCard({ product }: { product: Product; key?: any }) {
           rel="noopener noreferrer"
           className="w-full mt-auto bg-gray-900 hover:bg-gray-800 text-white flex flex-row items-center justify-center gap-2 py-3 rounded-xl font-medium transition-colors"
         >
-          Inquire Price <ExternalLink size={16} />
+          Inquire Now <ExternalLink size={16} />
         </a>
       </div>
     </div>
