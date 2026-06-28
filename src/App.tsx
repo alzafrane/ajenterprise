@@ -6,6 +6,7 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Portfolio from './components/Portfolio';
+import WhyChooseUs from './components/WhyChooseUs';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
@@ -18,6 +19,7 @@ export default function App() {
       <main>
         <Hero />
         <Portfolio />
+        <WhyChooseUs />
         <Testimonials />
       </main>
 
