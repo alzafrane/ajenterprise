@@ -1,234 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
-
-interface Product {
-  id: number;
-  name: string;
-  desc: string;
-  specs: string[];
-  image?: string;
-  images?: string[];
-  popular: boolean;
-}
-
-const products: Product[] = [
-  {
-    id: 1,
-    name: 'Refurbished Dell Latitude 5400',
-    desc: 'Business-class durability with robust performance. Ideal for everyday office work and heavy multitasking.',
-    specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/dell_5400_open.jpg',
-      '/images/dell_5400_closed.jpg',
-      '/images/dell_5400_angle.jpg'
-    ],
-    popular: true
-  },
-  {
-    id: 2,
-    name: 'Refurbished Dell Latitude 7280',
-    desc: 'Sleek design paired with absolute performance and enterprise security features.',
-    specs: ['Intel i7', '7th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/dell_7280_open_front.jpg',
-      '/images/dell_7280_open_angle.jpg',
-      '/images/dell_7280_closed_top.jpg'
-    ],
-    popular: true
-  },
-  {
-    id: 3,
-    name: 'Refurbished Dell Latitude 3400',
-    desc: 'Reliable and durable companion perfect for office productivity, studying, and everyday utility tasks.',
-    specs: ['Intel Core i5', '8th Gen..', '8 Gb Ram', '256 Gb SSD'],
-    images: [
-      '/images/dell_3400_open.jpg',
-      '/images/dell_3400_closed.jpg',
-      '/images/dell_3400_kbd.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 7,
-    name: 'Refurbished Dell Latitude 5490',
-    desc: 'Business-class durability with robust performance. Ideal for everyday office work and heavy multitasking.',
-    specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/dell_5400_open.jpg',
-      '/images/dell_5400_closed.jpg',
-      '/images/dell_5400_angle.jpg'
-    ],
-    popular: true
-  },
-  {
-    id: 5,
-    name: 'Refurbished Dell Latitude 5480',
-    desc: 'Reliable and durable business companion perfect for productivity and everyday utility tasks.',
-    specs: ['Intel i5', '6th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/dell_5480_open.jpg',
-      '/images/dell_5400_closed.jpg',
-      '/images/dell_3400_kbd.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 6,
-    name: 'Refurbished Dell Latitude 3510',
-    desc: 'Essential business laptop with a sleek modern design, perfect for students and professionals on the go.',
-    specs: ['Intel i3', '10th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/dell_3400_open.jpg',
-      '/images/dell_5400_closed.jpg',
-      '/images/dell_3400_kbd.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 12,
-    name: 'Refurbished HP Probook 440 G7',
-    desc: 'Stylish, thin-and-light laptop designed to empower your workday with essential business features and modern aesthetic.',
-    specs: ['Intel i5', '10th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/hp_probook_open.jpg',
-      '/images/macbook_a1708_closed.jpg',
-      '/images/dell_3400_kbd.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 8,
-    name: 'Refurbished HP Elitebook 840 G6',
-    desc: 'Premium enterprise laptop offering robust performance, striking visual display, and high-end security features for professionals.',
-    specs: ['Intel i5', '8th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/hp_probook_open.jpg',
-      '/images/macbook_a1708_closed.jpg',
-      '/images/dell_3400_kbd.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 9,
-    name: 'Refurbished HP 250 G8',
-    desc: 'Budget-friendly business laptop delivering reliable performance for everyday tasks and seamless connectivity.',
-    specs: ['Intel i5', '11th Genration', '8GB Ram', '256 SSD'],
-    images: [
-      '/images/dell_3400_open.jpg',
-      '/images/dell_3400_closed.jpg',
-      '/images/dell_3400_kbd.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 10,
-    name: 'Used MacBook Pro A1708',
-    desc: 'Premium lightweight aluminum build with stunning Retina display and reliable performance for professionals.',
-    specs: ['Intel i5 / i7', 'Year 2017', '8GB / 16GB Ram', '128GB/256GB SSD'],
-    images: [
-      '/images/macbook_a1708_open.jpg',
-      '/images/macbook_a1708_closed.jpg',
-      '/images/macbook_a1708_keyboard.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 11,
-    name: 'Used MacBook Pro A1989',
-    desc: 'Powerful computing with Touch Bar, dynamic vivid display, and fast storage for creative workflows.',
-    specs: ['Intel i5 / i7', 'Year 2018', '8GB / 16GB Ram', '256GB SSD'],
-    images: [
-      '/images/macbook_a1989_open.jpg',
-      '/images/macbook_a1989_closed.jpg',
-      '/images/macbook_a2251_keyboard.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 12,
-    name: 'Used MacBook Pro A2251',
-    desc: 'Ultimate productivity laptop with enhanced Magic Keyboard and True Tone display for an immersive experience.',
-    specs: ['Intel i5 / i7', 'Year 2020', '8GB / 16GB Ram', '256GB SSD'],
-    images: [
-      '/images/macbook_a2251_open.jpg',
-      '/images/macbook_a2251_closed.jpg',
-      '/images/macbook_a2251_keyboard.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 13,
-    name: 'Used MacBook Pro 15" A1990',
-    desc: 'Breathtaking 15-inch Retina display and exceptional performance for creative professionals with Touch Bar integration.',
-    specs: ['Intel i7 / i9', 'Year 2018', '16GB / 32GB Ram', '512GB SSD'],
-    images: [
-      '/images/macbook_pro_a1990.jpg',
-      '/images/macbook_a1989_closed.jpg',
-      '/images/macbook_a2251_keyboard.jpg'
-    ],
-    popular: true
-  },
-  {
-    id: 14,
-    name: 'Used MacBook Pro 16" A2141',
-    desc: 'Immersive 16-inch Retina display with powerful processing capabilities, perfect for demanding multi-core workloads.',
-    specs: ['Intel i7', 'Year 2019', '16GB Ram', '512GB SSD'],
-    images: [
-      '/images/macbook_pro_a2141_i7.jpg',
-      '/images/macbook_a2251_closed.jpg',
-      '/images/macbook_a2251_keyboard.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 15,
-    name: 'Used MacBook Pro 16" A2141',
-    desc: 'The ultimate professional powerhouse delivering top-tier performance for video editing, 3D rendering, and coding.',
-    specs: ['Intel i9', 'Year 2019', '16GB / 32GB Ram', '512GB / 1TB SSD'],
-    images: [
-      '/images/macbook_pro_a2141_i9.jpg',
-      '/images/macbook_a2251_closed.jpg',
-      '/images/macbook_a2251_keyboard.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 16,
-    name: 'Used MacBook Pro M1 Pro 14"',
-    desc: 'Game-changing Apple Silicon performance, jaw-dropping Liquid Retina XDR display, and incredible battery life.',
-    specs: ['8-Core CPU & 14-Core GPU', 'Year 2021', '16GB RAM', '512GB SSD'],
-    images: [
-      '/images/macbook_m1_open.jpg',
-      '/images/macbook_m1_closed.jpg',
-      '/images/macbook_m1_kbd.jpg'
-    ],
-    popular: true
-  },
-  {
-    id: 17,
-    name: 'Used MacBook Pro M2 Pro 14"',
-    desc: 'Exceptional sustained performance, advanced connectivity, and phenomenal battery life in a remarkably portable package.',
-    specs: ['12-Core CPU & 30-Core GPU', 'Year 2022/2023', '16GB RAM', '512GB SSD'],
-    images: [
-      '/images/macbook_m2_open.jpg',
-      '/images/macbook_m2_closed.jpg',
-      '/images/macbook_m2_kbd.jpg'
-    ],
-    popular: false
-  },
-  {
-    id: 18,
-    name: 'Used MacBook Pro M3 Pro 14"',
-    desc: 'The next generation of Apple Silicon offering mind-blowing speed, hardware-accelerated ray tracing, and a stunning Space Black finish.',
-    specs: ['12-Core CPU & 19-Core GPU', 'Year 2023/2024', '18GB RAM', '512GB SSD'],
-    images: [
-      '/images/macbook_m3_open.jpg',
-      '/images/macbook_m3_closed.jpg',
-      '/images/macbook_m3_kbd.jpg'
-    ],
-    popular: true
-  }
-];
+import { Link } from 'react-router-dom';
+import { products, Product } from '../data';
 
 function ProductCard({ product }: { product: Product; key?: any }) {
   const baseImages = product.images || (product.image ? [product.image] : []);
@@ -297,7 +70,7 @@ function ProductCard({ product }: { product: Product; key?: any }) {
           <Tag size={11} /> Bestseller
         </div>
       )}
-      <div className="relative h-64 overflow-hidden bg-slate-50/50 flex items-center justify-center border-b border-gray-100 group/slider">
+      <Link to={`/product/${product.id}`} className="relative h-64 overflow-hidden bg-slate-50/50 flex items-center justify-center border-b border-gray-100 group/slider block">
         {images.length > 0 ? (
           <img 
             src={images[currentIdx]} 
@@ -347,9 +120,11 @@ function ProductCard({ product }: { product: Product; key?: any }) {
             </div>
           </>
         )}
-      </div>
+      </Link>
       <div className="p-6 flex-grow flex flex-col">
-        <h4 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h4>
+        <Link to={`/product/${product.id}`} className="hover:text-primary transition-colors">
+          <h4 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h4>
+        </Link>
         <div className="space-y-2 mb-6 mt-4">
           {product.specs.map((spec, i) => (
              <div key={i} className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 px-2 py-1.5 rounded border border-gray-100">

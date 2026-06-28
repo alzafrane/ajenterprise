@@ -1,4 +1,50 @@
 import { Check, Star } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+
+function CountUp({ end, suffix = "", duration = 2000 }: { end: number, suffix?: string, duration?: number }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!inView) return;
+
+    let startTimestamp: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      const easeOut = progress * (2 - progress);
+      setCount(Math.floor(easeOut * end));
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        setCount(end);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [inView, end, duration]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export default function WhyChooseUs() {
   return (
@@ -22,7 +68,9 @@ export default function WhyChooseUs() {
           {/* Box 1: Bulk Orders (Dark 1 col) */}
           <div className="bg-[#111111] rounded-[24px] p-5 lg:p-6 text-white flex flex-col h-full lg:col-span-1 md:col-span-1 shadow-md">
             <span className="text-gray-500 text-[10px] font-bold tracking-widest uppercase mb-2">Trusted By</span>
-            <h4 className="text-3xl lg:text-4xl font-bold text-white mb-1 tracking-tight">500+</h4>
+            <h4 className="text-3xl lg:text-4xl font-bold text-white mb-1 tracking-tight">
+              <CountUp end={500} suffix="+" />
+            </h4>
             <h5 className="text-sm font-semibold mb-1">Happy businesses</h5>
             <p className="text-gray-400 text-sm leading-relaxed mt-auto">
               Special solutions for offices, students, startups, and bulk orders buying refurbished.
@@ -77,7 +125,9 @@ export default function WhyChooseUs() {
                  Pocket Friendly
                </span>
             </div>
-            <h4 className="text-3xl lg:text-4xl font-bold text-white mb-1 tracking-tight relative z-10">60%</h4>
+            <h4 className="text-3xl lg:text-4xl font-bold text-white mb-1 tracking-tight relative z-10">
+              <CountUp end={60} suffix="%" />
+            </h4>
             <h5 className="text-sm font-semibold mb-1 relative z-10 text-gray-200">Savings vs retail</h5>
             <p className="text-gray-400 text-sm leading-relaxed mt-auto relative z-10">
               Flagship performance and business-grade machines at a much smarter price point.
@@ -103,7 +153,9 @@ export default function WhyChooseUs() {
           {/* Box 7: Inventory (Dark 1 col) */}
           <div className="bg-[#111111] rounded-[24px] p-5 lg:p-6 text-white flex flex-col h-full lg:col-span-1 md:col-span-1 shadow-md">
             <span className="text-gray-500 text-[10px] font-bold tracking-widest uppercase mb-2">Diverse Inventory</span>
-            <h4 className="text-2xl lg:text-3xl font-bold text-white mb-1 tracking-tight">100+</h4>
+            <h4 className="text-2xl lg:text-3xl font-bold text-white mb-1 tracking-tight">
+              <CountUp end={100} suffix="+" />
+            </h4>
             <h5 className="text-sm font-semibold mb-1">Laptops in stock</h5>
             <p className="text-gray-400 text-sm leading-relaxed mt-auto">
               Always ready to deliver exactly what you need quickly across Ahmedabad.
