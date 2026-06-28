@@ -1,51 +1,63 @@
-import React, { useState } from 'react';
-import { ExternalLink, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { products, Product, createSlug } from '../data';
+import React, { useState } from "react";
+import { ExternalLink, Tag, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { products, Product, createSlug } from "../data";
 
 function ProductCard({ product }: { product: Product; key?: any }) {
   const baseImages = product.images || (product.image ? [product.image] : []);
-  
+
   // Dynamically assemble exactly 3 high-quality, relevant images for each product
   let images = [...baseImages];
   if (images.length === 0) {
     images = [
-      'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800'
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800",
+      "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800",
     ];
   } else if (images.length === 1) {
     const single = images[0];
-    if (product.name.toLowerCase().includes('macbook') || product.name.toLowerCase().includes('apple')) {
+    if (
+      product.name.toLowerCase().includes("macbook") ||
+      product.name.toLowerCase().includes("apple")
+    ) {
       images = [
         single,
-        'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800',
-        'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800'
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&q=80&w=800",
       ];
-    } else if (product.name.toLowerCase().includes('surface') || product.name.toLowerCase().includes('microsoft')) {
+    } else if (
+      product.name.toLowerCase().includes("surface") ||
+      product.name.toLowerCase().includes("microsoft")
+    ) {
       images = [
         single,
-        'https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?auto=format&fit=crop&q=80&w=800',
-        'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800'
+        "https://images.unsplash.com/photo-1589561084283-930aa7b1ce50?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&q=80&w=800",
       ];
-    } else if (product.name.toLowerCase().includes('rog') || product.name.toLowerCase().includes('gaming') || product.name.toLowerCase().includes('predator') || product.name.toLowerCase().includes('omen') || product.name.toLowerCase().includes('zephyrus')) {
+    } else if (
+      product.name.toLowerCase().includes("rog") ||
+      product.name.toLowerCase().includes("gaming") ||
+      product.name.toLowerCase().includes("predator") ||
+      product.name.toLowerCase().includes("omen") ||
+      product.name.toLowerCase().includes("zephyrus")
+    ) {
       images = [
         single,
-        'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&q=80&w=800',
-        'https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&q=80&w=800'
+        "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1598550476439-6847785fcea6?auto=format&fit=crop&q=80&w=800",
       ];
     } else {
       images = [
         single,
-        'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800',
-        'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800'
+        "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&q=80&w=800",
+        "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800",
       ];
     }
   } else if (images.length === 2) {
     images = [
       images[0],
       images[1],
-      'https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800'
+      "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?auto=format&fit=crop&q=80&w=800",
     ];
   }
 
@@ -70,10 +82,13 @@ function ProductCard({ product }: { product: Product; key?: any }) {
           <Tag size={11} /> Bestseller
         </div>
       )}
-      <Link to={`/product/${createSlug(product.name)}`} className="relative h-64 overflow-hidden bg-slate-50/50 flex items-center justify-center border-b border-gray-100 group/slider block">
+      <Link
+        to={`/product/${createSlug(product.name)}`}
+        className="relative h-64 overflow-hidden bg-slate-50/50 flex items-center justify-center border-b border-gray-100 group/slider block"
+      >
         {images.length > 0 ? (
-          <img 
-            src={images[currentIdx]} 
+          <img
+            src={images[currentIdx]}
             alt={`${product.name} - Used Laptop Ahmedabad`}
             className="w-full h-full object-cover transition-transform duration-500 scale-100"
             referrerPolicy="no-referrer"
@@ -112,7 +127,9 @@ function ProductCard({ product }: { product: Product; key?: any }) {
                     setCurrentIdx(idx);
                   }}
                   className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                    idx === currentIdx ? 'bg-primary scale-125' : 'bg-white/60 hover:bg-white'
+                    idx === currentIdx
+                      ? "bg-primary scale-125"
+                      : "bg-white/60 hover:bg-white"
                   }`}
                   aria-label={`Go to slide ${idx + 1}`}
                 />
@@ -122,18 +139,26 @@ function ProductCard({ product }: { product: Product; key?: any }) {
         )}
       </Link>
       <div className="p-6 flex-grow flex flex-col">
-        <Link to={`/product/${createSlug(product.name)}`} className="hover:text-primary transition-colors">
-          <h4 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h4>
+        <Link
+          to={`/product/${createSlug(product.name)}`}
+          className="hover:text-primary transition-colors"
+        >
+          <h4 className="text-xl font-bold text-gray-900 mb-2">
+            {product.name}
+          </h4>
         </Link>
         <div className="space-y-2 mb-6 mt-4">
           {product.specs.map((spec, i) => (
-             <div key={i} className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 px-2 py-1.5 rounded border border-gray-100">
+            <div
+              key={i}
+              className="flex items-center gap-2 text-sm text-gray-700 bg-gray-50 px-2 py-1.5 rounded border border-gray-100"
+            >
               <span className="w-1.5 h-1.5 bg-primary rounded-full flex-shrink-0"></span>
               <span className="truncate">{spec}</span>
             </div>
           ))}
         </div>
-        <a 
+        <a
           href={`https://wa.me/919601196085?text=Hi,%20I'm%20interested%20in%20the%20${encodeURIComponent(product.name)}`}
           target="_blank"
           rel="noopener noreferrer"
@@ -149,19 +174,25 @@ function ProductCard({ product }: { product: Product; key?: any }) {
 export default function Portfolio() {
   return (
     <section id="laptops" className="pt-12 pb-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-primary font-semibold tracking-wide uppercase text-sm mb-2">Our Collection</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Available Quality Laptops</h3>
-          <p className="text-gray-600 text-lg">Browse our most popular models in stock. We provide varying configurations based on your specific requirements and budget.</p>
+          <h2 className="text-primary font-semibold tracking-wide uppercase text-sm mb-2">
+            Our Collection
+          </h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Available Quality Laptops
+          </h3>
+          <p className="text-gray-600 text-lg">
+            Browse our most popular models in stock. We provide varying
+            configurations based on your specific requirements and budget.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
-
       </div>
     </section>
   );

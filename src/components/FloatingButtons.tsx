@@ -1,14 +1,14 @@
-import { Phone, MessageCircle, ArrowUp } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
+import { Phone, MessageCircle, ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "motion/react";
 
 export default function FloatingButtons() {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const testimonialsEl = document.getElementById('testimonials');
-      
+      const testimonialsEl = document.getElementById("testimonials");
+
       if (testimonialsEl) {
         // Show button when the testimonials section starts coming into view
         const targetScroll = testimonialsEl.offsetTop - window.innerHeight / 2;
@@ -27,17 +27,17 @@ export default function FloatingButtons() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     // Run once on mount
     handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -58,16 +58,16 @@ export default function FloatingButtons() {
           </motion.button>
         )}
       </AnimatePresence>
-      
-      <a 
-        href="tel:9601196085" 
+
+      <a
+        href="tel:9601196085"
         className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.5)] hover:bg-blue-700 hover:scale-110 transition-all duration-300 mx-auto"
         aria-label="Call Us"
       >
         <Phone size={20} className="animate-pulse" />
       </a>
-      <a 
-        href="https://wa.me/919601196085" 
+      <a
+        href="https://wa.me/919601196085"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-[0_0_15px_rgba(34,197,94,0.5)] hover:bg-green-600 hover:scale-110 transition-all duration-300 relative group mx-auto"

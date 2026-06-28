@@ -68,32 +68,13 @@ export default function ProductDetail() {
   const warrantyOptions = ["Free 1 year", "Extra 1 Year", "Extra 2 Years"];
 
   return (
-    <div className="bg-white min-h-screen pb-20">
-      {/* Breadcrumbs */}
-      <div className="border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center text-sm text-gray-500">
-            <Link to="/" className="hover:text-primary transition-colors">
-              Home
-            </Link>
-            <ChevronRight size={14} className="mx-2 text-gray-400" />
-            <span className="hover:text-primary cursor-pointer transition-colors">
-              All Laptops
-            </span>
-            <ChevronRight size={14} className="mx-2 text-gray-400" />
-            <span className="text-gray-900 font-medium truncate">
-              {product.name}
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="bg-white min-h-screen pb-20 pt-32">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left Column: Images */}
           <div className="space-y-4">
             {/* Main Image */}
-            <div className="relative aspect-video lg:aspect-square bg-slate-50 rounded-2xl overflow-hidden border border-gray-100 flex items-center justify-center p-8">
+            <div className="relative aspect-square bg-slate-50 rounded-2xl overflow-hidden border border-gray-100 flex items-center justify-center p-4 sm:p-8">
               <img
                 src={images[activeImageIdx]}
                 alt={product.name}
@@ -383,7 +364,7 @@ export default function ProductDetail() {
       </div>
 
       {/* You May Also Like Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-100">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-gray-100">
         <h2 className="text-2xl font-bold text-gray-900 mb-8">
           You May Also Like
         </h2>
