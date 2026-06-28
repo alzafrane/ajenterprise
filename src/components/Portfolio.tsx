@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ExternalLink, Tag, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { products, Product } from '../data';
+import { products, Product, createSlug } from '../data';
 
 function ProductCard({ product }: { product: Product; key?: any }) {
   const baseImages = product.images || (product.image ? [product.image] : []);
@@ -70,7 +70,7 @@ function ProductCard({ product }: { product: Product; key?: any }) {
           <Tag size={11} /> Bestseller
         </div>
       )}
-      <Link to={`/product/${product.id}`} className="relative h-64 overflow-hidden bg-slate-50/50 flex items-center justify-center border-b border-gray-100 group/slider block">
+      <Link to={`/product/${createSlug(product.name)}`} className="relative h-64 overflow-hidden bg-slate-50/50 flex items-center justify-center border-b border-gray-100 group/slider block">
         {images.length > 0 ? (
           <img 
             src={images[currentIdx]} 
@@ -122,7 +122,7 @@ function ProductCard({ product }: { product: Product; key?: any }) {
         )}
       </Link>
       <div className="p-6 flex-grow flex flex-col">
-        <Link to={`/product/${product.id}`} className="hover:text-primary transition-colors">
+        <Link to={`/product/${createSlug(product.name)}`} className="hover:text-primary transition-colors">
           <h4 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h4>
         </Link>
         <div className="space-y-2 mb-6 mt-4">

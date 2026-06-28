@@ -10,6 +10,10 @@ export interface Product {
   originalPrice?: number;
 }
 
+export const createSlug = (text: string) => {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+};
+
 export const products: Product[] = [
   {
     id: 1,

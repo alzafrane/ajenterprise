@@ -35,7 +35,7 @@ export default function App() {
         <div className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/product/:slug" element={<ProductDetail />} />
           </Routes>
         </div>
 
