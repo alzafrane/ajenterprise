@@ -301,7 +301,7 @@ function ProductCard({ product }: { product: Product; key?: any }) {
         {images.length > 0 ? (
           <img 
             src={images[currentIdx]} 
-            alt={`${product.name} - view ${currentIdx + 1}`} 
+            alt={`${product.name} - Used Laptop Ahmedabad`}
             className="w-full h-full object-cover transition-transform duration-500 scale-100"
             referrerPolicy="no-referrer"
           />
