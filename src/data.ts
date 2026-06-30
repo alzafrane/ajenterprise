@@ -280,4 +280,32 @@ export const products: Product[] = [
     price: 165000,
     originalPrice: 280000,
   },
+  {
+    id: 19,
+    name: "Refurbished Lenovo ThinkPad T490",
+    desc: "A durable and powerful laptop designed for professionals, offering robust performance and excellent keyboard.",
+    specs: ["Intel i5", "8th Generation", "8GB RAM", "256GB SSD"],
+    images: [
+      "/images/dell_5400_open.jpg",
+      "/images/dell_5400_closed.jpg",
+      "/images/dell_5400_angle.jpg",
+    ],
+    popular: false,
+    price: 24000,
+    originalPrice: 65000,
+  },
+  {
+    id: 20,
+    name: "Refurbished HP ProBook 450 G8",
+    desc: "A commercial-grade laptop built for productivity, featuring a sleek design and reliable performance.",
+    specs: ["Intel i5", "11th Generation", "8GB RAM", "256GB SSD"],
+    images: [
+      "/images/hp_probook_open.jpg",
+      "/images/hp_probook_open.jpg",
+      "/images/hp_probook_open.jpg",
+    ],
+    popular: false,
+    price: 35000,
+    originalPrice: 75000,
+  },
 ];

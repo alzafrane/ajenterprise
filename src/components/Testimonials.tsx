@@ -24,7 +24,7 @@ export default function Testimonials() {
       id="testimonials"
       className="py-20 bg-gray-100 border-t border-gray-200"
     >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-primary font-semibold tracking-wide uppercase text-sm mb-2">
             Testimonials

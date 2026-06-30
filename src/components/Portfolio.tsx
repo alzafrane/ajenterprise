@@ -90,7 +90,7 @@ function ProductCard({ product }: { product: Product; key?: any }) {
           <img
             src={images[currentIdx]}
             alt={`${product.name} - Used Laptop Ahmedabad`}
-            className="w-full h-full object-cover transition-transform duration-500 scale-100"
+            className="w-full h-full object-contain p-6 transition-transform duration-500 scale-100"
             referrerPolicy="no-referrer"
           />
         ) : (
@@ -116,25 +116,6 @@ function ProductCard({ product }: { product: Product; key?: any }) {
               <ChevronRight className="w-5 h-5 md:w-4 md:h-4" />
             </button>
 
-            {/* Pagination dots */}
-            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10 bg-black/30 px-2.5 py-1 rounded-full backdrop-blur-[2px]">
-              {images.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    setCurrentIdx(idx);
-                  }}
-                  className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-                    idx === currentIdx
-                      ? "bg-primary scale-125"
-                      : "bg-white/60 hover:bg-white"
-                  }`}
-                  aria-label={`Go to slide ${idx + 1}`}
-                />
-              ))}
-            </div>
           </>
         )}
       </Link>
@@ -174,7 +155,7 @@ function ProductCard({ product }: { product: Product; key?: any }) {
 export default function Portfolio() {
   return (
     <section id="laptops" className="pt-12 pb-20 bg-gray-50">
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-primary font-semibold tracking-wide uppercase text-sm mb-2">
             Our Collection

@@ -23,7 +23,7 @@ export default function Hero() {
       id="home"
       className="pt-32 pb-8 lg:pt-40 lg:pb-12 bg-gradient-to-br from-white to-orange-50/30 overflow-hidden"
     >
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-8 xl:gap-12">
           <div className="lg:w-1/2 space-y-6 z-10 lg:pr-8 xl:pr-12">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-semibold shadow-sm text-gray-800">
