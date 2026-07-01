@@ -33,18 +33,16 @@ export default function Hero() {
 
             <h1 className="text-4xl sm:text-5xl lg:text-[3.2rem] xl:text-[3.8rem] font-extrabold leading-[1.1] text-[#0f172a] tracking-tight">
               <span className="block sm:whitespace-nowrap">
-                Premium Laptops
+                Used & Refurbished
               </span>
-              <span className="block">at</span>
+              <span className="block">Laptops in</span>
               <span className="text-primary block font-black sm:whitespace-nowrap">
-                Unbeatable Prices
+                Ahmedabad
               </span>
             </h1>
 
             <p className="text-base lg:text-lg text-gray-500 max-w-xl font-medium leading-relaxed mt-4">
-              Discover a curated selection of fully tested, professional-grade
-              laptops and desktops. Trusted by businesses and students for
-              reliable performance.
+              Buy certified used and refurbished laptops in Ahmedabad. Explore Dell, HP, Lenovo, ASUS, Acer and Apple laptops at affordable prices with quality assurance and reliable after-sales support.
             </p>
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-3 mt-6">
